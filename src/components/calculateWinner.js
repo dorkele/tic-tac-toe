@@ -17,7 +17,6 @@ export const calculateWinner = (slotsArray) => {
             slotsArray[a] === slotsArray[b] &&
             slotsArray[a] === slotsArray[c]
         ) {
-            console.log("tu");
             return slotsArray[a];
         }
     }

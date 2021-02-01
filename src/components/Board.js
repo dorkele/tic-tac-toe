@@ -7,21 +7,21 @@ import Players from "./Players";
 
 export default function Board() {
     const [slotsArray, setSlotsArray] = useState(Array(9).fill(null));
-    const [currentPlayer, setCurrentPlayer] = useState(true);
+    const [currentPlayerX, setCurrentPlayerX] = useState(true);
     const winner = calculateWinner(slotsArray);
 
     const handleClick = (index) => {
         if (slotsArray[index]) {
             return;
         }
-        slotsArray[index] = currentPlayer ? "x" : "o";
-        setCurrentPlayer(!currentPlayer);
+        slotsArray[index] = currentPlayerX ? "x" : "o";
+        setCurrentPlayerX(!currentPlayerX);
         setSlotsArray(slotsArray);
     };
 
     const handleRestart = () => {
         setSlotsArray(Array(9).fill(null));
-        setCurrentPlayer(true);
+        setCurrentPlayerX(true);
     };
 
     return (
@@ -29,7 +29,7 @@ export default function Board() {
             {winner ? (
                 <WinOverlay winner={winner} restart={handleRestart} />
             ) : (
-                <Players currentPlayer={currentPlayer} winner={winner} />
+                <Players currentPlayerX={currentPlayerX} />
             )}
 
             <div className={styles.board}>

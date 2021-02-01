@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./Players.module.css";
 
-export default function Players({ currentPlayer, winner }) {
+export default function Players({ currentPlayerX }) {
     return (
         <div className={styles.players}>
             <div
                 className={
-                    currentPlayer
+                    currentPlayerX
                         ? `${styles.currentPlayer}`
                         : `${styles.otherPlayer}`
                 }
@@ -15,7 +15,7 @@ export default function Players({ currentPlayer, winner }) {
             </div>
             <div
                 className={
-                    currentPlayer
+                    currentPlayerX
                         ? `${styles.otherPlayer}`
                         : `${styles.currentPlayer}`
                 }

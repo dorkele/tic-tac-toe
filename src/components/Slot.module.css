@@ -1,8 +1,18 @@
 .slots {
     height: 100px;
     width: 100px;
-    border: 2px solid black;
-    font-family: "compagnon-light-webfont";
+    font-family: "compagnonlight";
+    font-size: 80px;
+    border-radius: 30%;
+    backdrop-filter: blur(10px);
+    background-color: rgba(234, 57, 87, 0.2);
+    border: none;
+    margin: 3px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.slots:focus {
+    outline: rgb(0, 0, 0) solid 2px;
 }
 
 @font-face {

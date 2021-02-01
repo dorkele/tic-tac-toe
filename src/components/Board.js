@@ -2,33 +2,47 @@ import React, { useState } from "react";
 import Slot from "./Slot";
 import styles from "./Board.module.css";
 import { calculateWinner } from "./calculateWinner";
+import WinOverlay from "./WinOverlay";
+import Players from "./Players";
 
 export default function Board() {
-    // ovo probaj bez use state, ako ne pazis na data immutability, ako
-    // da, dodaj undo funkciju
     const [slotsArray, setSlotsArray] = useState(Array(9).fill(null));
     const [currentPlayer, setCurrentPlayer] = useState(true);
     const winner = calculateWinner(slotsArray);
 
     const handleClick = (index) => {
-        slotsArray[index] = currentPlayer ? "X" : "O";
+        if (slotsArray[index]) {
+            return;
+        }
+        slotsArray[index] = currentPlayer ? "x" : "o";
         setCurrentPlayer(!currentPlayer);
         setSlotsArray(slotsArray);
-        console.log(winner);
+    };
+
+    const handleRestart = () => {
+        setSlotsArray(Array(9).fill(null));
+        setCurrentPlayer(true);
     };
 
     return (
-        <div className={styles.board}>
-            {slotsArray.map((slot, index) => {
-                return (
-                    <Slot
-                        key={index}
-                        onClick={() => handleClick(index)}
-                        value={slot}
-                    />
-                );
-            })}
-            <div>Current Player: {currentPlayer ? "X" : "O"}</div>
+        <div className={styles.game}>
+            {winner ? (
+                <WinOverlay winner={winner} restart={handleRestart} />
+            ) : (
+                <Players currentPlayer={currentPlayer} winner={winner} />
+            )}
+
+            <div className={styles.board}>
+                {slotsArray.map((slot, index) => {
+                    return (
+                        <Slot
+                            key={index}
+                            onClick={() => handleClick(index)}
+                            value={slot}
+                        />
+                    );
+                })}
+            </div>
         </div>
     );
 }

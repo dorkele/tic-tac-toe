@@ -12,9 +12,24 @@ export const calculateWinner = (slotsArray) => {
 
     for (let i = 0; i < arrayOfWins.length; i++) {
         const [a, b, c] = arrayOfWins[i];
-        if (slotsArray[a] && slotsArray[a] === slotsArray[b] && slotsArray[c]) {
-            console.log("winner");
+        if (
+            slotsArray[a] &&
+            slotsArray[a] === slotsArray[b] &&
+            slotsArray[a] === slotsArray[c]
+        ) {
+            console.log("tu");
             return slotsArray[a];
+        }
+    }
+
+    let tie = 0;
+    for (let i = 0; i < slotsArray.length; i++) {
+        if (slotsArray[i]) {
+            tie++;
+        }
+
+        if (tie === 9) {
+            return "Tie!";
         }
     }
     return null;

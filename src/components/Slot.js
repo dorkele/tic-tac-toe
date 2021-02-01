@@ -4,7 +4,7 @@ import styles from "./Slot.module.css";
 export default function Slot({ value, onClick }) {
     return (
         <button className={styles.slots} onClick={onClick}>
-            {value}
+            <div>{value}</div>
         </button>
     );
 }

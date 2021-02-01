@@ -1,0 +1,27 @@
+.players {
+    width: 100%;
+    position: fixed;
+    top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.currentPlayer {
+    animation: pulse 4s infinite;
+}
+
+.otherPlayer {
+    font-size: 30px;
+}
+
+@keyframes pulse {
+    0%,
+    100% {
+        font-size: 50px;
+    }
+    50% {
+        font-size: 110px;
+    }
+}

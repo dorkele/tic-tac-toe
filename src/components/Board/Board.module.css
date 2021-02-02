@@ -36,7 +36,7 @@ html,
 
 @font-face {
     font-family: "compagnonlight";
-    src: url("../compagnon-light-webfont.woff") format("woff");
+    src: url("../../assets/compagnon-light-webfont.woff") format("woff");
     font-weight: normal;
     font-style: normal;
 }

@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Slot from "./Slot";
+import Slot from "../Slot/Slot";
 import styles from "./Board.module.css";
-import { calculateWinner } from "./calculateWinner";
-import WinOverlay from "./WinOverlay";
-import Players from "./Players";
+import { calculateWinner } from "../../calculateWinner";
+import WinOverlay from "../WinOverlay/WinOverlay";
+import Players from "../Players/Players";
 
 export default function Board() {
     const [slotsArray, setSlotsArray] = useState(Array(9).fill(null));

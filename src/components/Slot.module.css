@@ -14,10 +14,3 @@
 .slots:focus {
     outline: rgb(0, 0, 0) solid 2px;
 }
-
-@font-face {
-    font-family: "compagnonlight";
-    src: url("../compagnon-light-webfont.woff") format("woff");
-    font-weight: normal;
-    font-style: normal;
-}

@@ -1,5 +1,5 @@
 .players {
-    width: 100%;
+    width: 50%;
     position: fixed;
     top: 10px;
     display: flex;
@@ -9,7 +9,7 @@
 }
 
 .currentPlayer {
-    animation: pulse 4s infinite;
+    animation: pulse 5s infinite;
 }
 
 .otherPlayer {
@@ -19,9 +19,15 @@
 @keyframes pulse {
     0%,
     100% {
-        font-size: 50px;
+        font-size: 70px;
     }
     50% {
         font-size: 110px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .players {
+        width: 100%;
     }
 }

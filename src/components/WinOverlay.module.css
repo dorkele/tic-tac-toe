@@ -45,3 +45,15 @@
     border: none;
     font-size: 25px;
 }
+
+@media screen and (max-width: 768px) {
+    .winner {
+        width: 90%;
+        height: 50%;
+        font-size: 40px;
+        text-align: center;
+    }
+    .button {
+        font-size: 20px;
+    }
+}
